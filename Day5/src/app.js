@@ -20,6 +20,7 @@ app.patch("/notes",(req,res)=>{
     res.send("Notes Updated")
 })
 app.put("/note",(req,res)=>{
+    res.send("put method")
     
 })
 app.get("/notes",(req,res)=>{
