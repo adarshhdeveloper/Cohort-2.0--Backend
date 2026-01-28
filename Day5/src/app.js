@@ -23,6 +23,7 @@ app.put("/note",(req,res)=>{
     res.send("put method")
     
 })
+app.delete("/notes",()=> )
 app.get("/notes",(req,res)=>{
     res.send("Notes Recived")
     console.log(notes)
