@@ -1,9 +1,10 @@
 const express = require('express')
-const notemodele = require('./models/notes.model')
 const notemodel = require('./models/notes.model')
+const cors =require('cors')
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 //adding daata in notes 
 app.post('/notes',async(req,res)=>{
@@ -64,5 +65,4 @@ app.patch('/notes/:id',async (req,res)=>{
     })
 
 })
-
 module.exports = app
