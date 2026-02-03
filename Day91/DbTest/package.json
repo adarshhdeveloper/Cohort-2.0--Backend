@@ -1,5 +1,5 @@
 {
-  "name": "day91",
+  "name": "dbtest",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "dotenv": "^17.2.3",
+    "cors": "^2.8.6",
+    "espress": "^0.0.0",
     "express": "^5.2.1",
     "mongoose": "^9.1.5"
   }
