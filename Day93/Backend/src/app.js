@@ -1,10 +1,12 @@
 const express = require('express')
 const notemodel = require('./models/notes.model')
 const cors =require('cors')
+const path = require('path')
 
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.use(express.static('./public'))
 
 //adding daata in notes 
 app.post('/notes',async(req,res)=>{
@@ -65,4 +67,11 @@ app.patch('/notes/:id',async (req,res)=>{
     })
 
 })
+
+//wild card Route 
+app.use('*name',(req,res)=>{
+    res.sendFile(path.join(__dirname,'..','/public/index.html'))
+   
+})
+
 module.exports = app
