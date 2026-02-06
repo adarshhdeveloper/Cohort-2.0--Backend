@@ -1,8 +1,10 @@
 const express = require('express')
 const todoModel = require('./models/todo.model')
+const cors = require('cors')
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 //creating todo
 app.post('/api/todo',async (req,res)=>{
