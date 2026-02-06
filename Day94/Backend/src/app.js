@@ -13,7 +13,6 @@ app.post('/api/todo',async (req,res)=>{
     await todoModel.create({
         desc
     })
-    
     res.status(201).json({
         msg:'Todo list  created '
     })
