@@ -28,6 +28,7 @@ const App = () => {
       })
       .then(res => {
         console.log(res.data)
+        desc.value=''
         fetchTodoList()
       })
   }
@@ -35,12 +36,23 @@ const App = () => {
   //delte list 
  function handaleDelteTodo(listId){
    axios.delete('http://localhost:3000/api/todo/'+listId)
-   .then(res=>console.log(res.data),fetchTodoList())
+    .then(res => {
+        console.log(res.data)
+        fetchTodoList()
+      })
+ }
+ //Update Todo 
+ function handleUpdateTodo(listId){
+  axios.patch('http://localhost:3000/api/todo/'+listId,{desc:'Updated'})
+  .then(res => {
+        console.log(res.data)
+        fetchTodoList()
+      })
  }
   return (
     <>
       <form onSubmit={handleForm}>
-        <input name='desc' type='text' placeholder='Enter Todo ' value={} />
+        <input name='desc' type='text' placeholder='Enter Todo '  />
         <button>Create Todo</button>
       </form>
 
@@ -51,6 +63,9 @@ const App = () => {
               <input type='checkbox' />
               <button onClick={()=>handaleDelteTodo(list._id)}>
                 <i className='ri-delete-bin-2-line'></i>
+              </button>
+              <button onClick={()=>handleUpdateTodo(list._id)}>
+                <i className="ri-edit-fill"></i>
               </button>
               <li key={idx}>{list.desc}</li>
             </div>
