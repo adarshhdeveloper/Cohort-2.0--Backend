@@ -10,7 +10,7 @@ const App = () => {
 
   //fetch todo list
   function fetchTodoList () {
-    axios.get('http://localhost:3000/api/todo').then(res => {
+    axios.get('https://todo-app-isr4.onrender.com/api/todo').then(res => {
       setList(res.data.todoList)
     })
   }
@@ -23,7 +23,7 @@ const App = () => {
     e.preventDefault()
     const { desc } = e.target
     axios
-      .post('http://localhost:3000/api/todo', {
+      .post('https://todo-app-isr4.onrender.com/api/todo', {
         desc: desc.value
       })
       .then(res => {
@@ -35,7 +35,7 @@ const App = () => {
 
   //delte list 
  function handaleDelteTodo(listId){
-   axios.delete('http://localhost:3000/api/todo/'+listId)
+   axios.delete('https://todo-app-isr4.onrender.com/api/todo/'+listId)
     .then(res => {
         console.log(res.data)
         fetchTodoList()
@@ -43,7 +43,7 @@ const App = () => {
  }
  //Update Todo 
  function handleUpdateTodo(listId){
-  axios.patch('http://localhost:3000/api/todo/'+listId,{desc:'Updated'})
+  axios.patch('https://todo-app-isr4.onrender.com/api/todo/'+listId,{desc:'Updated'})
   .then(res => {
         console.log(res.data)
         fetchTodoList()
