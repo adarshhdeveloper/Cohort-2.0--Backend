@@ -42,13 +42,13 @@ const App = () => {
       })
  }
  //Update Todo 
- function handleUpdateTodo(listId){
-  axios.patch('https://todo-app-isr4.onrender.com/api/todo/'+listId,{desc:'Updated'})
-  .then(res => {
-        console.log(res.data)
-        fetchTodoList()
-      })
- }
+//  function handleUpdateTodo(listId){
+//   axios.patch('https://todo-app-isr4.onrender.com/api/todo/'+listId,{desc:'Updated'})
+//   .then(res => {
+//         console.log(res.data)
+//         fetchTodoList()
+//       })
+//  }
   return (
     <>
       <form onSubmit={handleForm}>
@@ -64,9 +64,9 @@ const App = () => {
               <button onClick={()=>handaleDelteTodo(list._id)}>
                 <i className='ri-delete-bin-2-line'></i>
               </button>
-              <button onClick={()=>handleUpdateTodo(list._id)}>
+              {/* <button onClick={()=>handleUpdateTodo(list._id)}>
                 <i className="ri-edit-fill"></i>
-              </button>
+              </button> */}
               <li key={idx}>{list.desc}</li>
             </div>
           )
