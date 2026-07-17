@@ -1,0 +1,20 @@
+Error Handaling 
+1. inbuilt error handling
+2. user defined error handling      
+
+
+1. inbuilt error handling
+   try:
+       # code that may raise an error
+   except ExceptionType:
+       # code to handle the error   
+
+2. user defined error handling
+   class CustomError(Exception):
+       pass
+
+   try:
+       # code that may raise an error
+       raise CustomError("This is a custom error")
+   except CustomError as e:
+       print(f"An error occurred: {e}")

@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 //creating  notes 
 app.post('/notes', (req, res) => {
-    notes.push(...req.body)
+    notes.push(...req.body)   // unpacking of array notes jisase ushi notes me add ho notes like net na create ho 
     res.send('Notes created')
     console.log(notes)
 
